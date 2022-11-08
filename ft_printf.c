@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 00:04:48 by iecharak          #+#    #+#             */
-/*   Updated: 2022/11/07 09:27:46 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/08 01:27:19 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,28 @@ int	ft_printf(const char *s, ...)
 	va_list	p;
 	int		l;
 	int		i;
+	int		persent;
 
 	l = 0;
 	i = 0;
+	persent = 0;
 	va_start(p, s);
-	
 	while (s[i])
 	{
 		if (s[i] == '%')
+		{
 			i++;
-		if (s[i] == '\0')
-			break ;
-		l += check_format(p, s[i]);
+			persent = 1;
+			if (s[i] == '\0')
+				break ;
+		}
+		else
+			l += ft_putchar_l(s[i]);
+		if (persent)
+		{
+			l += check_format(p, s[i]);
+			persent = 0;
+		}
 		i++;
 	}
 	va_end(p);
