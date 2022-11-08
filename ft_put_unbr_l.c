@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_l.c                                      :+:      :+:    :+:   */
+/*   ft_put_unbr_l.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 03:36:00 by iecharak          #+#    #+#             */
-/*   Updated: 2022/11/08 15:01:44 by iecharak         ###   ########.fr       */
+/*   Created: 2022/11/07 07:05:06 by iecharak          #+#    #+#             */
+/*   Updated: 2022/11/08 15:03:58 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_l(int n)
+int	ft_put_unbr_l(unsigned int n)
 {
 	int	i;
 
 	i = 0;
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return (11);
-	}
-	else if (n < 0)
-	{
-		n *= -1;
-		i += ft_putchar_l('-');
-		i += ft_putnbr_l(n);
-	}
-	else if (n <= 9)
+	if (n <= 9)
 	{
 		i += ft_putchar_l(n + '0');
 	}

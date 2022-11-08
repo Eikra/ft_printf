@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 03:33:08 by iecharak          #+#    #+#             */
-/*   Updated: 2022/11/07 08:52:46 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:57:44 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	ft_putchar_l(char c)
 {
 	write(1, &c, 1);
-		return (1);
+	return (1);
 }
